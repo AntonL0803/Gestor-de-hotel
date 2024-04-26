@@ -27,4 +27,8 @@ public class Individual extends Habitacion{
         // Aquí podrías implementar la lógica para cambiar los datos específicos de la habitación individual
         System.out.println("Cambiando datos de habitación individual...");
     }
+    @Override
+    public boolean disponibleParaFecha(String fechaInicio, String fechaFin) {
+        return !getDisponibilidad();
+    }
 }

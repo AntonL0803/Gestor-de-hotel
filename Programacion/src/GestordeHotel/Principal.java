@@ -7,9 +7,7 @@ public class Principal {
     public static void main(String[] args) {
         Hotel hotel = new Hotel();
         Principal p = new Principal();
-        int opcion;
-        int usuarioAdm, usuarioCliente, usuarioHabita;
-        Date fechaCheckOut, fechaCheckIn;
+        LinkedList<Cliente> clientes = new LinkedList<>();
 
         System.out.println("Bienvenido a la aplicación para la gestión del hotel");
         System.out.println("¿Qué es lo que desea hacer? Elige una de las opciones: ");
@@ -22,14 +20,7 @@ public class Principal {
                 System.out.println("Elija una opción de las siguientes (Gestión de habitaciones):\n1. Dar de alta\n2. Dar de baja\n3.Modificar datos ");
                 p.opcionesAdmin(admin, hotel);
             case 2:
-                if (clienteActual != null) {
 
-                    // Mostrar las habitaciones disponibles
-                    System.out.println("Habitaciones disponibles: ");
-                    hotel.mostrarHabitaciones(hotel.verHabitacionesDisponibles());
-
-                    // Solicitar detalles de la reserva
-                    System.out.print("Ingrese el usuario de la habitación que desea reservar: ");
                     usuarioHabita = sc.nextInt();
                     Habitacion habitacionSeleccionada = null;
                     for (Habitacion habitacion : hotel.verHabitacionesDisponibles()) {

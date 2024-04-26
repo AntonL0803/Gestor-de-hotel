@@ -15,7 +15,7 @@ public abstract class Habitacion extends Hotel{
         }
         this.numeroHab = numeroHab;
         this.precioNoche = precioNoche;
-        this.disponibilidad = true;
+        this.disponibilidad = false;
     }
 
     public int getNumeroHab() {
@@ -34,13 +34,14 @@ public abstract class Habitacion extends Hotel{
         this.precioNoche = precioNoche;
     }
 
-    public boolean isDisponibilidad() {
+    public boolean getDisponibilidad() {
         return disponibilidad;
     }
 
     public void setDisponibilidad(boolean disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
+
     private boolean numeroOcupado(int numero) {
         for (Habitacion habitacion : super.getHabitaciones()) {
             if (habitacion.getNumeroHab() == numero) {
@@ -50,6 +51,9 @@ public abstract class Habitacion extends Hotel{
         return false;
     }
 
+    public abstract void cambiarDatos();
+
+    public abstract boolean disponibleParaFecha(String fechaInicio, String fechaFin);
     @Override
     public String toString() {
         return "Habitacion:\n" +
@@ -59,5 +63,4 @@ public abstract class Habitacion extends Hotel{
                 ", disponibilidad=" + disponibilidad +
                 '}';
     }
-    public abstract void cambiarDatos();
 }
