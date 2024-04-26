@@ -28,4 +28,3 @@ public class Administrador extends Hotel {
             System.out.println("No se encontró la habitación " + numeroHabitacion);
         }
     }
-}

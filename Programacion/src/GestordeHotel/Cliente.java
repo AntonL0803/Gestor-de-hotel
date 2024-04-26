@@ -1,4 +1,5 @@
 package GestordeHotel;
 
-public class Cliente extends {
+public class Cliente extends Hotel {
+
 }
